@@ -4,17 +4,27 @@ class OpenerController < UIViewController
 
     self.view.backgroundColor = UIColor.whiteColor
 
-    @add_button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    @add_button.setTitle("Go!", forState:UIControlStateNormal)
-    @add_button.sizeToFit
-    @add_button.frame = CGRect.new(
+    @gate_button = FUIButton.buttonWithType(UIButtonTypeRoundedRect)
+
+    @gate_button.buttonColor = UIColor.turquoiseColor
+    @gate_button.shadowColor = UIColor.greenSeaColor
+    @gate_button.cornerRadius = 6.0
+    @gate_button.titleLabel.font = UIFont.boldFlatFontOfSize(16)
+
+    @gate_button.setTitleColor(UIColor.cloudsColor, forState:UIControlStateNormal)
+    @gate_button.setTitleColor(UIColor.cloudsColor, forState: UIControlStateHighlighted)
+
+    
+    # @gate_button.setTitle("Go!", forState:UIControlStateNormal)
+    @gate_button.sizeToFit
+    @gate_button.frame = CGRect.new(
       [
-        self.view.frame.size.width / 2 - @add_button.frame.size.width,
-        self.view.frame.size.height / 2 - @add_button.frame.size.height
+        self.view.frame.size.width / 2 - 150 / 2,
+        100
       ],
-      @add_button.frame.size)
-    self.view.addSubview(@add_button)
-    @add_button.addTarget(
+      [150, 100])
+    self.view.addSubview(@gate_button)
+    @gate_button.addTarget(
       self, action:"trigger_gate", forControlEvents:UIControlEventTouchUpInside)
   end
 
