@@ -1,0 +1,1 @@
+This is a little RubyMotion app to trigger the raspberry pi gate opener I built.
