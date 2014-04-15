@@ -1,5 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    application.setStatusBarStyle(UIStatusBarStyleLightContent)
+    
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.applicationFrame)
     @window.makeKeyAndVisible
 
